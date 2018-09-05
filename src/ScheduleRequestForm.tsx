@@ -33,6 +33,9 @@ export default class Form extends React.Component<IProps, IState> {
     });
   };
   public handleSubmit = () => {
+    this.setState({
+      hasTriggeredFetch: true
+    });
     this.props.onScheduleRequest(
       this.state.selectedFacility,
       moment(this.state.selectedDate).format("DD-MM-YY")

@@ -6,6 +6,7 @@ import "./App.css";
 import Header from "./Header";
 import { IMainReducer } from "./reducer";
 import ScheduleRequestForm from "./ScheduleRequestForm";
+import ScheduleTable from "./ScheduleTable";
 // Props passed from mapStateToProps
 interface IPropsFromState {
   appState: IMainReducer;
@@ -33,7 +34,6 @@ class App extends React.Component<AppContainerProps> {
     this.props.fetchSchedules("000001", "12-12-2018");
   }
   public onScheduleRequest = (facilityId: string, day: string) => {
-    console.log(day, "da");
     this.props.fetchSchedules(facilityId, day);
   };
   public render() {
@@ -46,6 +46,11 @@ class App extends React.Component<AppContainerProps> {
               facilities={this.props.appState.locations}
               onScheduleRequest={this.onScheduleRequest}
             />
+          </div>
+          <div className="col-12 form-container">
+            {this.props.appState.schedules.length && (
+              <ScheduleTable schedules={this.props.appState.schedules} />
+            )}
           </div>
         </div>
       </div>
