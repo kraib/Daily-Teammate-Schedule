@@ -32,3 +32,6 @@ a {
     transform: rotate(360deg);
   }
 }
+.form-container {
+  padding-top: 20px;
+}
