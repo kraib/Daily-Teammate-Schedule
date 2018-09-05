@@ -19,7 +19,7 @@ describe("action tests", () => {
     const fetchSchedulesStub = jest.spyOn(api.api, "fetchSchedulesAsync");
     const store = getMockStore();
     store
-      .dispatch<any>(fetchSchedulesAction("000001", "12-12-2018"))
+      .dispatch<any>(fetchSchedulesAction("000001", "1-12-2018"))
       .then(() => {
         expect(fetchSchedulesStub).toHaveBeenCalled();
         done();
