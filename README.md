@@ -25,3 +25,7 @@ To run tests:
 To run linting:
 
 `$ yarn lint`
+
+## Description
+
+App that displays daily teammate schedule built with typescript react and redux
